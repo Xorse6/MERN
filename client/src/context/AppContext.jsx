@@ -9,7 +9,7 @@ export const AppContextProvider = (props)=>{
     axios.defaults.withCredentials = true;
 
     // connection between backend and frontend
-    const backendUrl = import.meta.env.VITE_BACKEND_URL
+    const backendUrl = "https://gagalolo.onrender.com"
 
 
     // This state will help display items on the frontend
