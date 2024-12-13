@@ -11,19 +11,11 @@ const app = express();
 const port = process.env.PORT || 4000
 connectDB();
 
-const corsOptions = {
-  origin: 'https://napadi-yqyk.onrender.com', // Allow this origin
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Allow cookies or Authorization headers
-};
-
-app.use(cors(corsOptions));
-
-// const allowedOrigins = ['https://napadi-yqyk.onrender.com']
+const allowedOrigins = ['https://napadi-yqyk.onrender.com']
 
 app.use(express.json())
 app.use(cookieParser());
-// app.use(cors({origin: allowedOrigins, credentials: true}))
+app.use(cors({origin: allowedOrigins, credentials: true}))
 
 // API Endpoint
 app.get('/', (req,res)=> res.send("API Working"));
